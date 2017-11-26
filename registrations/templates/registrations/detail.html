@@ -1,0 +1,6 @@
+<h1>{{ patient }}</h1>
+<ul>
+{% for appointment in patient.appointment_set.all %}
+    <li>{{ appointment }}</li>
+{% endfor %}
+</ul>
