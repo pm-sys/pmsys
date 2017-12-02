@@ -11,7 +11,24 @@ class Person(models.Model):
     def __str__(self):
         return  '{first} {last}'.format(first=self.first_name, last=self.last_name)
 
+
+class MedicalStaff(Person):
+    employee_number = models.IntegerField(default=11111)
+    login_password = models.CharField(max_length=20)
+
+
+class Ward(models.Model):
+    id = models.AutoField(primary_key=True)
+    ward_name = models.CharField(max_length=200, default='defaultward')
+    medical_staff = models.ForeignKey(MedicalStaff, on_delete=models.CASCADE, null=True)
+    total_room = models.IntegerField(default=0)
+    total_bed = models.IntegerField(default=0)
+
+    def __str__(self):
+        return  '{wardName}'.format(wardName=self.ward_name)
+
 class Patient(Person):
+
     patient_number = models.AutoField(primary_key=True, default=0)
     insurance_number = models.IntegerField(default=0)
     reg_date = models.DateTimeField('date registered')
@@ -31,11 +48,7 @@ class Patient(Person):
     ext_doctor_id = models.IntegerField(default=0)
     rationale = models.CharField(max_length=200)
     priority = models.IntegerField(default=0)
-
-class MedicalStaff(Person):
-    employee_number = models.IntegerField(default=11111)
-    login_password = models.CharField(max_length=20)
-
+    ward = models.ForeignKey(Ward)
 
 class Appointment(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
@@ -45,13 +58,3 @@ class Appointment(models.Model):
 
     def __str__(self):
         return 'Appointment for {patient} with Doctor ID: {doctor} at {date}.'.format(patient=str(self.patient), doctor=str(self.in_doctor_id), date=str(self.apt_date))
-
-class Ward(models.Model):
-    ward_name = models.CharField(max_length=200, default='defaultward')
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, null=True)
-    medical_staff = models.ForeignKey(MedicalStaff, on_delete=models.CASCADE, null=True)
-    room_number = models.IntegerField(default=0)
-    bed_number = models.IntegerField(default=0)
-
-    def __str__(self):
-        return  '{wardName}'.format(wardName=self.ward_name)
