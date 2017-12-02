@@ -31,6 +31,11 @@ class Patient(Person):
     rationale = models.CharField(max_length=200)
     priority = models.IntegerField(default=0)
 
+class MedicalStaff(Person):
+    employee_number = models.IntegerField(default=11111)
+    login_password = models.CharField(max_length=20)
+
+
 class Appointment(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     apt_date = models.DateTimeField('appointment date')
@@ -39,3 +44,13 @@ class Appointment(models.Model):
 
     def __str__(self):
         return 'Appointment for {patient} with Doctor ID: {doctor} at {date}.'.format(patient=str(self.patient), doctor=str(self.in_doctor_id), date=str(self.apt_date))
+
+class Ward(models.Model):
+    ward_name = models.CharField(max_length=200, default='defaultward')
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, null=True)
+    medical_staff = models.ForeignKey(MedicalStaff, on_delete=models.CASCADE, null=True)
+    room_number = models.IntegerField(default=0)
+    bed_number = models.IntegerField(default=0)
+
+    def __str__(self):
+        return  '{wardName}'.format(wardName=self.ward_name)

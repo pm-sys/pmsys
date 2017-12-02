@@ -102,3 +102,12 @@ ENV/
 
 .env
 db.sqlite3
+
+#migrations stuff
+registrations/migrations/
+
+#vscode
+.vscode
+
+#gitignore
+.gitignore
