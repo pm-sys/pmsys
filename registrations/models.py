@@ -12,6 +12,7 @@ class Person(models.Model):
         return  '{first} {last}'.format(first=self.first_name, last=self.last_name)
 
 class Patient(Person):
+    registration_number = models.AutoField(primary_key=True)
     insurance_number = models.IntegerField(default=0)
     reg_date = models.DateTimeField('date registered')
     gender = (
