@@ -9,8 +9,8 @@ admin.site.register(Ward)
 
 
 class PatientAdmin(admin.ModelAdmin):
-    list_display = ('registration_number', 'last_name', 'first_name')
-    search_fields = ['registration_number']
+    list_display = ('patient_number', 'last_name', 'first_name')
+    search_fields = ['patient_number']
 
 
 admin.site.register(Patient, PatientAdmin)
