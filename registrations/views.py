@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 
 # Create your views here.
 from django.http import HttpResponse
@@ -7,11 +7,7 @@ from .models import Patient
 
 
 def index(request):
-    latest_patient_list = Patient.objects.order_by('-reg_date')[:5]
-    context = {
-        'latest_patient_list': latest_patient_list,
-    }
-    return render(request, 'registrations/index.html', context)
+    return redirect('/admin/')
 
 def detail(request, patient_id):
     patient = get_object_or_404(Patient, pk=patient_id)
