@@ -26,6 +26,21 @@ class Ward(models.Model):
 
     def __str__(self):
         return  '{wardName}'.format(wardName=self.ward_name)
+    
+class Prescription(models.Model):
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    drug_number = models.IntegerField(default=0)
+    drug_name = models.CharField(max_length=200)
+    units_by_day = models.IntegerField(default=0)
+    number_of_administration_per_day = models.IntegerField(default=0)
+    time_of_units_administered = models.TimeField('Time of administration')
+    number_of_units_administered = models.IntegerField(default=0)
+    method_of_administration = models.CharField(max_length=200)
+    start_date = models.DateTimeField('Start date')
+    finish_date = models.DateTimeField('Finish date')
+
+    def __str__(self):
+        return 'Appointment for {patient}.'.format(patient=str(self.patient))
 
 class Patient(Person):
 
