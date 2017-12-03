@@ -6,6 +6,7 @@ from .models import Patient, Appointment, Ward, MedicalStaff
 admin.site.register(MedicalStaff)
 admin.site.register(Appointment)
 admin.site.register(Ward)
+admin.site.register(Prescription)
 
 
 class PatientAdmin(admin.ModelAdmin):
