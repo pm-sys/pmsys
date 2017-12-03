@@ -18,7 +18,7 @@ class MedicalStaff(Person):
 
 
 class Ward(models.Model):
-    id = models.AutoField(primary_key=True)
+    ward_id = models.AutoField(primary_key=True)
     ward_name = models.CharField(max_length=200, default='defaultward')
     medical_staff = models.ForeignKey(MedicalStaff, on_delete=models.CASCADE, null=True)
     total_room = models.IntegerField(default=0)
@@ -29,7 +29,7 @@ class Ward(models.Model):
 
 class Patient(Person):
 
-    patient_number = models.AutoField(primary_key=True, default=0)
+    patient_number = models.AutoField(primary_key=True)
     insurance_number = models.IntegerField(default=0)
     reg_date = models.DateTimeField('date registered')
     gender = (
@@ -48,7 +48,7 @@ class Patient(Person):
     ext_doctor_id = models.IntegerField(default=0)
     rationale = models.CharField(max_length=200)
     priority = models.IntegerField(default=0)
-    ward = models.ForeignKey(Ward)
+    ward = models.ForeignKey(Ward, null=True)
 
 class Prescription(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
