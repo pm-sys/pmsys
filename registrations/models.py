@@ -64,12 +64,3 @@ class Prescription(models.Model):
 
     def __str__(self):
         return 'Prescription for {patient}.'.format(patient=str(self.patient))
-
-class Appointment(models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
-    apt_date = models.DateTimeField('appointment date')
-    location = models.CharField(max_length=200)
-    in_doctor_id = models.IntegerField(default=0)
-
-    def __str__(self):
-        return 'Appointment for {patient} with Doctor ID: {doctor} at {date}.'.format(patient=str(self.patient), doctor=str(self.in_doctor_id), date=str(self.apt_date))
