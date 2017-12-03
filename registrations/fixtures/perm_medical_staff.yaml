@@ -1,0 +1,186 @@
+- model: contenttypes.contenttype
+  pk: 21
+  fields: {app_label: registrations, model: person}
+- model: contenttypes.contenttype
+  pk: 22
+  fields: {app_label: registrations, model: medicalstaff}
+- model: contenttypes.contenttype
+  pk: 23
+  fields: {app_label: registrations, model: ward}
+- model: contenttypes.contenttype
+  pk: 24
+  fields: {app_label: registrations, model: patient}
+- model: contenttypes.contenttype
+  pk: 25
+  fields: {app_label: registrations, model: prescription}
+- model: contenttypes.contenttype
+  pk: 26
+  fields: {app_label: admin, model: logentry}
+- model: contenttypes.contenttype
+  pk: 27
+  fields: {app_label: auth, model: permission}
+- model: contenttypes.contenttype
+  pk: 28
+  fields: {app_label: auth, model: group}
+- model: contenttypes.contenttype
+  pk: 29
+  fields: {app_label: auth, model: user}
+- model: contenttypes.contenttype
+  pk: 30
+  fields: {app_label: contenttypes, model: contenttype}
+- model: contenttypes.contenttype
+  pk: 31
+  fields: {app_label: sessions, model: session}
+- model: sessions.session
+  pk: s2dkkyybeqgu6eh768jy4dxekcrrgdtj
+  fields: {session_data: NDExMGYyOWY3NDg3MzY5OWMyNWExMjAyMTFmNzg5ZTgxZDY5YmI0Njp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIxZDRlZjFkNjY5NWM5ZDZmNjg2NzU1MGIyMzI2NjViZjg5N2QwM2I3In0=,
+    expire_date: ! '2017-12-17 16:28:04.875501+00:00'}
+- model: auth.permission
+  pk: 62
+  fields: {name: Can add person, content_type: 21, codename: add_person}
+- model: auth.permission
+  pk: 63
+  fields: {name: Can change person, content_type: 21, codename: change_person}
+- model: auth.permission
+  pk: 64
+  fields: {name: Can delete person, content_type: 21, codename: delete_person}
+- model: auth.permission
+  pk: 65
+  fields: {name: Can add medical staff, content_type: 22, codename: add_medicalstaff}
+- model: auth.permission
+  pk: 66
+  fields: {name: Can change medical staff, content_type: 22, codename: change_medicalstaff}
+- model: auth.permission
+  pk: 67
+  fields: {name: Can delete medical staff, content_type: 22, codename: delete_medicalstaff}
+- model: auth.permission
+  pk: 68
+  fields: {name: Can add ward, content_type: 23, codename: add_ward}
+- model: auth.permission
+  pk: 69
+  fields: {name: Can change ward, content_type: 23, codename: change_ward}
+- model: auth.permission
+  pk: 70
+  fields: {name: Can delete ward, content_type: 23, codename: delete_ward}
+- model: auth.permission
+  pk: 71
+  fields: {name: Can add patient, content_type: 24, codename: add_patient}
+- model: auth.permission
+  pk: 72
+  fields: {name: Can change patient, content_type: 24, codename: change_patient}
+- model: auth.permission
+  pk: 73
+  fields: {name: Can delete patient, content_type: 24, codename: delete_patient}
+- model: auth.permission
+  pk: 74
+  fields: {name: Can add prescription, content_type: 25, codename: add_prescription}
+- model: auth.permission
+  pk: 75
+  fields: {name: Can change prescription, content_type: 25, codename: change_prescription}
+- model: auth.permission
+  pk: 76
+  fields: {name: Can delete prescription, content_type: 25, codename: delete_prescription}
+- model: auth.permission
+  pk: 77
+  fields: {name: Can add log entry, content_type: 26, codename: add_logentry}
+- model: auth.permission
+  pk: 78
+  fields: {name: Can change log entry, content_type: 26, codename: change_logentry}
+- model: auth.permission
+  pk: 79
+  fields: {name: Can delete log entry, content_type: 26, codename: delete_logentry}
+- model: auth.permission
+  pk: 80
+  fields: {name: Can add permission, content_type: 27, codename: add_permission}
+- model: auth.permission
+  pk: 81
+  fields: {name: Can change permission, content_type: 27, codename: change_permission}
+- model: auth.permission
+  pk: 82
+  fields: {name: Can delete permission, content_type: 27, codename: delete_permission}
+- model: auth.permission
+  pk: 83
+  fields: {name: Can add group, content_type: 28, codename: add_group}
+- model: auth.permission
+  pk: 84
+  fields: {name: Can change group, content_type: 28, codename: change_group}
+- model: auth.permission
+  pk: 85
+  fields: {name: Can delete group, content_type: 28, codename: delete_group}
+- model: auth.permission
+  pk: 86
+  fields: {name: Can add user, content_type: 29, codename: add_user}
+- model: auth.permission
+  pk: 87
+  fields: {name: Can change user, content_type: 29, codename: change_user}
+- model: auth.permission
+  pk: 88
+  fields: {name: Can delete user, content_type: 29, codename: delete_user}
+- model: auth.permission
+  pk: 89
+  fields: {name: Can add content type, content_type: 30, codename: add_contenttype}
+- model: auth.permission
+  pk: 90
+  fields: {name: Can change content type, content_type: 30, codename: change_contenttype}
+- model: auth.permission
+  pk: 91
+  fields: {name: Can delete content type, content_type: 30, codename: delete_contenttype}
+- model: auth.permission
+  pk: 92
+  fields: {name: Can add session, content_type: 31, codename: add_session}
+- model: auth.permission
+  pk: 93
+  fields: {name: Can change session, content_type: 31, codename: change_session}
+- model: auth.permission
+  pk: 94
+  fields: {name: Can delete session, content_type: 31, codename: delete_session}
+- model: auth.group
+  pk: 3
+  fields:
+    name: doctors
+    permissions: [71, 72, 74, 75, 76]
+- model: auth.group
+  pk: 4
+  fields:
+    name: charge_nurses
+    permissions: [71, 72, 73, 68, 69, 70]
+- model: auth.group
+  pk: 5
+  fields:
+    name: medical_staff
+    permissions: [71, 72, 73]
+- model: auth.user
+  pk: 3
+  fields:
+    password: pbkdf2_sha256$36000$pVm2sFhMJADg$TUjUuZJqJ+iaiWe50S7D5UF9j2pW2sZbwzFvtY34/io=
+    last_login: 2017-12-03 16:28:04.872012+00:00
+    is_superuser: true
+    username: admin
+    first_name: ''
+    last_name: ''
+    email: ''
+    is_staff: true
+    is_active: true
+    date_joined: 2017-12-03 16:28:01.881016+00:00
+    groups: []
+    user_permissions: []
+- model: admin.logentry
+  pk: 6
+  fields: {action_time: ! '2017-12-03 16:52:42.267215+00:00', user: 3, content_type: 28,
+    object_id: '3', object_repr: doctors, action_flag: 1, change_message: '[{"added":
+      {}}]'}
+- model: admin.logentry
+  pk: 7
+  fields: {action_time: ! '2017-12-03 16:55:45.840464+00:00', user: 3, content_type: 28,
+    object_id: '3', object_repr: doctors, action_flag: 2, change_message: '[{"changed":
+      {"fields": ["permissions"]}}]'}
+- model: admin.logentry
+  pk: 8
+  fields: {action_time: ! '2017-12-03 16:58:33.588878+00:00', user: 3, content_type: 28,
+    object_id: '4', object_repr: charge_nurses, action_flag: 1, change_message: '[{"added":
+      {}}]'}
+- model: admin.logentry
+  pk: 9
+  fields: {action_time: ! '2017-12-03 17:00:20.378162+00:00', user: 3, content_type: 28,
+    object_id: '5', object_repr: medical_staff, action_flag: 1, change_message: '[{"added":
+      {}}]'}
