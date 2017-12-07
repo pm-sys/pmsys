@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+# The Person Class
 class Person(models.Model):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
@@ -11,15 +12,17 @@ class Person(models.Model):
     def __str__(self):
         return  '{first} {last}'.format(first=self.first_name, last=self.last_name)
 
-
+# The MedicalStaff class is a subclass of the Person class
 class MedicalStaff(Person):
     employee_number = models.IntegerField(default=11111)
     login_password = models.CharField(max_length=20)
 
-
+# The Ward Class
 class Ward(models.Model):
     ward_id = models.AutoField(primary_key=True)
     ward_name = models.CharField(max_length=200, default='defaultward')
+    # ForeginKey specifies associations
+    # Instances of MedicalStaff are assigned to a Ward
     medical_staff = models.ForeignKey(MedicalStaff, on_delete=models.CASCADE, null=True)
     total_room = models.IntegerField(default=0)
     total_bed = models.IntegerField(default=0)
@@ -48,9 +51,13 @@ class Patient(Person):
     ext_doctor_id = models.IntegerField(default=0)
     rationale = models.CharField(max_length=200)
     priority = models.IntegerField(default=0)
+    # ForeginKey specifies associations
+    # Patients belong to a Ward
     ward = models.ForeignKey(Ward, null=True)
 
 class Prescription(models.Model):
+    # ForeginKey specifies associations
+    # Prescriptions are associated with patients
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     drug_number = models.IntegerField(default=0)
     drug_name = models.CharField(max_length=200)

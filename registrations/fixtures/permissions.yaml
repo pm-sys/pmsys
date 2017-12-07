@@ -57,6 +57,7 @@
   fields: {patient: 1, drug_number: 1, drug_name: Mead, units_by_day: 5, number_of_administration_per_day: 8,
     time_of_units_administered: '20:20:00', number_of_units_administered: 0, method_of_administration: Oral,
     start_date: ! '2017-12-03 20:20:10+00:00', finish_date: ! '2018-01-24 20:20:14+00:00'}
+# contenttypes label different Classes, so permissions can be assigned to them.
 - model: contenttypes.contenttype
   fields: {app_label: registrations, model: person}
 - model: contenttypes.contenttype
@@ -83,6 +84,7 @@
   pk: kqbw23c9362jq1ia7ljby54hnlq3b73d
   fields: {session_data: N2M3Y2I1MmVlMDlkYThkOGY3YzExOTY5OTUzYjBhMDI3Nzc0MzJmNDp7Il9hdXRoX3VzZXJfaWQiOiIxNSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiYmVkNDBlMTRkYWRjMDIxM2JlOTU3ZTdhODQ4OTMwNmYxZDY4NjY4YyJ9,
     expire_date: ! '2017-12-17 20:11:08.336874+00:00'}
+# Group Definitions
 - model: auth.group
   fields:
     name: doctors
